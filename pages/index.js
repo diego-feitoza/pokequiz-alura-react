@@ -1,15 +1,17 @@
 import styled from 'styled-components'
 import db from '../db.json'
-
 import Widget from '../src/components/Widget'
+import QuizBackground from '../src/components/QuizBackground';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
 
 // Montando componente a partir do styled component
-const Background = styled.div`
-    background-image: url(${db.bg});
-    flex: 1;
-    background-size: cover;
-    background-position: center;
-`;
+// const Background = styled.div`
+//     background-image: url(${db.bg});
+//     flex: 1;
+//     background-size: cover;
+//     background-position: center;
+// `;
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -22,18 +24,9 @@ export const QuizContainer = styled.div`
   }
 `;
 
-// Montando componente a partir de uma função JS
-// function Title(props){ //Propcidade/propriedades
-//   return (
-//     <h1>
-//       {props.children}
-//     </h1>
-//   )
-// }
-
 export default function Home() {
   return (
-    <Background>
+    <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <Widget>
           <Widget.Header>
@@ -54,7 +47,9 @@ export default function Home() {
           </Widget.Content>
 
         </Widget>
+        <Footer />
       </QuizContainer>
-    </Background>
+      <GitHubCorner projectUrl="https://github.com/diego-feitoza/pokequiz-alura-react" />
+    </QuizBackground>
   );
 }
