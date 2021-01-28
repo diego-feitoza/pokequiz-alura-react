@@ -1,7 +1,11 @@
-import styled from 'styled-components'
-import db from '../db.json'
-import Widget from '../src/components/Widget'
+import React from 'react';
+import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
+import db from '../db.json';
+import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
+import QuizLogo from '../src/components/QuizLogo';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 
@@ -24,17 +28,40 @@ export const QuizContainer = styled.div`
   }
 `;
 
-export default function Home() {
+export default function Home() {  
+  const router = useRouter();
+  let [name, setName] = React.useState('');
+  // console.log(`useState: ${name}`)
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>Pokemon</h1>
           </Widget.Header>
 
           <Widget.Content>
-            <p>Hello World! Hello World! Hello World! Hello World! </p>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              // console.log('Submit React');
+              
+              router.push(`/quiz?name=${name}`);
+              //Router para a proxima pagina
+            }}
+            >
+              <input placeholder="Fala teu nome ai =]" 
+              onChange={(e) => {
+                // name = e.target.value
+                setName(e.target.value)
+              }}
+              />
+              <button type="submit" disabled={!name}>
+                Jogar
+                {/* {name} */}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
         <Widget>
