@@ -6,6 +6,7 @@ import React from 'react';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizContainer from '../src/components/QuizContainer';
+import AlternativesForm from '../src/components/AlternativesForm';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
 import GitHubCorner from '../src/components/GitHubCorner';
@@ -18,24 +19,42 @@ const LoadingWidget = () => {
         Pokequiz
       </Widget.Header>
       <Widget.Content>
-        <p>
-          Loading...
-        </p>
+        <img src="https://i.pinimg.com/originals/a2/dc/96/a2dc9668f2cf170fe3efeb263128b0e7.gif" alt="Loading..." style={{'width':'285px'}}/>
       </Widget.Content>
     </Widget>
   )
 }
 
-const ResultQuiz = () => {
+const ResultQuiz = ({ results }) => {
+  let somatorio = results.length ? results.filter((x) => x).length : 0;
   return(
     <Widget>
       <Widget.Header>
-        Pokequiz
+        Resultado do Pokequiz
       </Widget.Header>
       <Widget.Content>
         <p>
-          Parabéns! Você acertou X questões
+          Parabéns! Você acertou 
+          {' '}
+          {/*results.reduce( (somatoriaAtual, resultAtual) => {
+            const isAcero = resultAtual === true
+            if(isAcero) return (somatoriaAtual + 1)
+            
+            return somatoriaAtual 
+          }, 0)*/}
+          {somatorio}
+          {' '} 
+          {somatorio > 1 ? `questões` : `questão`}
         </p>
+        <ul>
+          {/* No map é necessario usar a arrow function com um return .map(() => ()) */}
+          {console.log('Results: ',results)}
+          {results.map((result, index) => ( 
+              <li key={`$resultado__${result}-#0${index+1}`}>
+                {`#0${index+1} - ${result ? 'Acertou' : 'Errou'}`}
+              </li>
+            ))}
+        </ul>
       </Widget.Content>
     </Widget>
   )
@@ -46,9 +65,15 @@ const QuesionWidget = ({
   question, 
   totalQuestion,
   questionId,
-  onSubmit
+  onSubmit,
+  addResult
 }) => {
+  const [selectedAlternative, setSelectedAlternative] = React.useState(undefined)
   const questionName = `querstionName__${questionId}`;
+  const [isQuestionSubmited, setIsQuestionSubmited] = React.useState(false);
+  const isCorrect = selectedAlternative === question.answer //Estudar essa estrutura
+  const hasAlternativeSelected = selectedAlternative !== undefined;
+
   return(
     <Widget>
         <Widget.Header>
@@ -73,33 +98,50 @@ const QuesionWidget = ({
           <p>
             {question.description}
           </p>
-            <form onSubmit={(e) => {
+            <AlternativesForm onSubmit={(e) => {
               e.preventDefault();
-              onSubmit();
+              setIsQuestionSubmited(true);
+              console.log('selectedAlternative: ', selectedAlternative)
+              setTimeout(() => {   
+                addResult(isCorrect);
+                onSubmit();
+                setIsQuestionSubmited(false);
+                setSelectedAlternative(undefined); //Voltar input selecionado para o estado inicial  
+                console.log('selectedAlternative: ', selectedAlternative) 
+              }, 2000)
             }}
             >
             {question.alternatives.map((alternative, alternativeIndex) => {
               // console.log(alternative)
-              const alternativeId = `alternative__${alternativeIndex}`
+              const alternativeId = `alternative__${alternativeIndex}`;
+              const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR'
+              const isSelected = selectedAlternative === alternativeIndex
+
               return (
                 <Widget.Topic
                   as="label"
+                  key={alternativeId}
                   htmlFor={alternativeId}
+                  data-selected={isSelected}
+                  data-status={isQuestionSubmited ? alternativeStatus : ''}
                 >
                   <input 
-                    // style={{display:'none'}}
+                    style={{display:'none'}}
                     id={alternativeId}
                     name={questionName}
+                    onChange={() => { setSelectedAlternative(alternativeIndex) }}
                     type="radio"
-                    />   
+                  />   
                   {alternative}                   
                 </Widget.Topic>        
               );
             })} 
-            <Button type="submit">
+            <Button type="submit" disabled={!hasAlternativeSelected}>
               Confirmar
             </Button>  
-          </form>  
+            {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
+            {isQuestionSubmited && !isCorrect && <p>Você errou!</p>} 
+          </AlternativesForm>  
         </Widget.Content>
       </Widget>
   )
@@ -120,14 +162,23 @@ const screenStates = {
 export default function QuizPage() {    
     const [screenState, setScreenState] = React.useState(screenStates.LOADING);
     // console.log('Perguntas criadas: ', db.questions);
+    const [results, setResults] = React.useState([]); //Um array pode ser usado para salvar true ou false caso erre
     const [currentQuestion, setCurrentQuestion] = React.useState(0);
     const questionId = currentQuestion;
     const question = db.questions[questionId];
     const totalQuestion = db.questions.length;
   
     // const name = routes.query.name; //Nome user do query
+
+    const addResult = (result) => {
+      setResults([
+        ...results,
+        result
+      ])
+    }
   
     React.useEffect(() => {
+      // console.log('Quiz: ', question);
       //fetch() ...
       setTimeout(() => {
         setScreenState(screenStates.QUIZ);
@@ -154,10 +205,11 @@ export default function QuizPage() {
             totalQuestion={totalQuestion}
             questionId={questionId}
             onSubmit={handleSubmitQuiz}
+            addResult={addResult}
           />
         )}
         {screenState === screenStates.LOADING && <LoadingWidget />}
-        {screenState === screenStates.RESULT && <ResultQuiz />}
+        {screenState === screenStates.RESULT && <ResultQuiz results={results}/>}
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/diego-feitoza/pokequiz-alura-react" />
     </QuizBackground>
