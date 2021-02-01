@@ -50,8 +50,8 @@ const ResultQuiz = ({ results }) => {
           {/* No map é necessario usar a arrow function com um return .map(() => ()) */}
           {console.log('Results: ',results)}
           {results.map((result, index) => ( 
-              <li key={`$resultado__${result}-#0${index+1}`}>
-                {`#0${index+1} - ${result ? 'Acertou' : 'Errou'}`}
+              <li key={`$resultado__${result}-#${('0'+(index+1)).slice(-2)}`}>
+                {`#${('0'+(index+1)).slice(-2)} - ${result ? 'Acertou' : 'Errou'}`}
               </li>
             ))}
         </ul>
