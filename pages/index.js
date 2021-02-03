@@ -11,6 +11,7 @@ import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
+import Link from '../src/components/Link';
 
 // Montando componente a partir do styled component
 // const Background = styled.div`
@@ -67,7 +68,26 @@ export default function Home() {
           </Widget.Header>
 
           <Widget.Content>
-            <p>Hello World! Hello World! Hello World! Hello World! </p>
+            <ul>
+              {db.external.map((linkQuiz, index) => {
+                const [projectName, githubUser] = linkQuiz.replace(/\//g,'')
+                                                          .replace('https:','')                                                        
+                                                          .replace('.vercel.app','')
+                                                          .split('.') 
+                return (
+                  <li key={`linkAlura__${index}`}>
+                    {/* <Widget.Topic href={`/quiz/${projectName}?name=${githubUser}`} title={`Link_externo_${index}`}> */} {/* Minha Versão */}
+                    <Widget.Topic
+                      as={Link}
+                      href={`/quiz/${projectName}___${githubUser}`}
+                      title={`Link_externo_${index}`}> {/* Versão Curso */}
+                      {`${projectName}/${githubUser}`}
+                    </Widget.Topic>
+                  </li>
+                )
+              })}
+            </ul>
+
           </Widget.Content>
 
         </Widget>

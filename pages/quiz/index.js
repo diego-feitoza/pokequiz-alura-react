@@ -3,14 +3,14 @@
 import React from 'react';
 // import { useRouter } from 'next/router';
 
-import db from '../db.json';
-import Widget from '../src/components/Widget';
-import QuizContainer from '../src/components/QuizContainer';
-import AlternativesForm from '../src/components/AlternativesForm';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizLogo from '../src/components/QuizLogo';
-import GitHubCorner from '../src/components/GitHubCorner';
-import Button from '../src/components/Button';
+import db from '../../db.json';
+import Widget from '../../src/components/Widget';
+import QuizContainer from '../../src/components/QuizContainer';
+import AlternativesForm from '../../src/components/AlternativesForm';
+import QuizBackground from '../../src/components/QuizBackground';
+import QuizLogo from '../../src/components/QuizLogo';
+import GitHubCorner from '../../src/components/GitHubCorner';
+import Button from '../../src/components/Button';
 
 const LoadingWidget = () => {
   return(

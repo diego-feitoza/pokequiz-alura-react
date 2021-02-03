@@ -24,90 +24,12 @@
            "background: linear-gradient(#e66465, #9198e5);",
            "background: gradient(#e66465, #9198e5);"
         ]
-      },
-      {
-        "image": "https://www.icegif.com/wp-content/uploads/angry-pokemon-icegif.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
-        ]
-      },
-      {
-        "image": "https://steamuserimages-a.akamaihd.net/ugc/776228609007905807/C5655926320572667FE23C6C4016C0643D796879/",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
-        ]
-      },
-      {
-        "image": "https://4.bp.blogspot.com/-0lTFGE9GDoA/T2YJkJtJOUI/AAAAAAAAAg0/VDekTHbbFhI/s1600/tumblr_lkj5bxH6ZB1qcqavbo1_400.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
-        ]
-      },
-      {
-        "image": "https://img.ibxk.com.br/2017/05/22/22114523204062.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
-        ]
-      },
-      {
-        "image": "https://i.pinimg.com/originals/aa/5f/c5/aa5fc59737394c4d39fd9503f6069e35.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
-        ]
-      },
-      {
-        "image": "https://i.gifer.com/J0Xv.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
-        ]
-      },
-      {
-        "image": "https://i.pinimg.com/originals/c0/26/5f/c0265f26aad6d92a2a4f5f38b9d94ddc.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
-        ]
-      },
-      {
-        "image": "https://i.gifer.com/Ymcx.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
-        ]
       }
     ],
     "external": [
-      ""
+      "https://pokequiz-alura-react.diego-feitoza.vercel.app/",
+      "https://aluraquiz-css.omariosouto.vercel.app/",
+      "https://aluraquiz-devsoutinho.omariosouto.vercel.app/"
     ],
     "theme": {
       "colors": {
