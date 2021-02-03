@@ -16,7 +16,8 @@ import BackLinkArrow from '../../components/BackLinkArrow';
 const LoadingWidget = () => {
   return(
     <Widget>
-      <Widget.Header>
+      <Widget.Header>          
+        <BackLinkArrow href="/" />
         Pokequiz
       </Widget.Header>
       <Widget.Content>
@@ -30,7 +31,8 @@ const ResultQuiz = ({ results }) => {
   let somatorio = results.length ? results.filter((x) => x).length : 0;
   return(
     <Widget>
-      <Widget.Header>
+      <Widget.Header>          
+        <BackLinkArrow href="/" />
         Resultado do Pokequiz
       </Widget.Header>
       <Widget.Content>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 import db from '../db.json';
 import Widget from '../src/components/Widget';
@@ -31,7 +32,16 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          variants={{
+            show: {opacity: 1, y: '0'},
+            hidden: {opacity: 0, y: '100%'}
+          }}
+          animate="show"
+          initial="hidden" //de acordo com as variant
+        >
           <Widget.Header>
             <h1>Pokemon</h1>
           </Widget.Header>
@@ -62,7 +72,16 @@ export default function Home() {
             </form>
           </Widget.Content>
         </Widget>
-        <Widget>
+        <Widget
+          as={motion.section}
+          variants={{            
+            show: {opacity: 1, y: '0'},
+            hidden: {opacity: 0, y: '100%'}
+          }}
+          transition={{ delay: 0.5, duration: 0.3 }}
+          animate="show"
+          initial="hidden"
+        >
           <Widget.Header>
             <h1>Quiz da Galera</h1>
           </Widget.Header>
@@ -91,7 +110,16 @@ export default function Home() {
           </Widget.Content>
 
         </Widget>
-        <Footer />
+        <Footer 
+          as={motion.footer}
+          variants={{            
+            show: {opacity: 1, y: '0'},
+            hidden: {opacity: 0, y: '100%'}
+          }}
+          transition={{ delay: 0.8, duration: 0.2 }}
+          animate="show"
+          initial="hidden"
+        />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/diego-feitoza/pokequiz-alura-react" />
     </QuizBackground>

@@ -11,11 +11,13 @@ import QuizBackground from '../../src/components/QuizBackground';
 import QuizLogo from '../../src/components/QuizLogo';
 import GitHubCorner from '../../src/components/GitHubCorner';
 import Button from '../../src/components/Button';
+import BackLinkArrow from '../../src/components/BackLinkArrow';
 
 const LoadingWidget = () => {
   return(
     <Widget>
-      <Widget.Header>
+      <Widget.Header>        
+        <BackLinkArrow href="/" />
         Pokequiz
       </Widget.Header>
       <Widget.Content>
@@ -30,6 +32,7 @@ const ResultQuiz = ({ results }) => {
   return(
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href="/" />
         Resultado do Pokequiz
       </Widget.Header>
       <Widget.Content>
@@ -77,7 +80,7 @@ const QuesionWidget = ({
   return(
     <Widget>
         <Widget.Header>
-          {/* <BackLinkArrow href="/" /> */}
+          <BackLinkArrow href="/" />
       <h2>
         {`Pergunta ${questionId+1} de ${totalQuestion}`}
       </h2>
