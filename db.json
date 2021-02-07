@@ -5,24 +5,122 @@
     "questions": [
       {
         "image": "https://i.pinimg.com/originals/fc/ac/9a/fcac9a80651c20cfde5d41d430016ac6.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
-        "answer": 2,
+        "title": "Qual o tipo do primeiro pokémon de Ash?",
+        "description": "Você lembra?",
+        "answer": 3,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "Psiquico",
+          "Planta",
+          "Água",
+          "Elétrico"
         ]
       },
       {
         "image": "https://i.pinimg.com/originals/23/2d/15/232d153e5aae4517c9a6510622bd0368.gif",
-        "title": "Como fazer um background gradiente com css?",
+        "title": "Qual o nome do primeiro pokémon de Ash?",
+        "description": "Para completar a primeira pergunta!",
+        "answer": 0,
+        "alternatives": [
+           "Pikachu",
+           "Electabuzz",
+           "Magikarp",
+           "Magnemite"
+        ]
+      },
+      {
+        "image": "https://www.icegif.com/wp-content/uploads/angry-pokemon-icegif.gif",
+        "title": "Qual o primeiro filme Live Action de Pokemón",
+        "description": "Agora ta complicando...",
+        "answer": 2,
+        "alternatives": [
+          "Pokemon: O Filme",
+          "Pokemon: Eu escolho você!",
+          "Detetive Pikachu",
+          "Pokemon: O poder de todos"
+        ]
+      },
+      {
+        "image": "https://steamuserimages-a.akamaihd.net/ugc/776228609007905807/C5655926320572667FE23C6C4016C0643D796879/",
+        "title": "Qual o nome do grupo com que vivia o Squirtle do Ash?",
+        "description": "Será que você sabe?",
+        "answer": 1,
+        "alternatives": [
+           "Gangue dos Squirtle",
+           "Esquadrão Squirtle",
+           "Time Squirtle",
+           "Squirtle até o fim"
+        ]
+      },
+      {
+        "image": "https://4.bp.blogspot.com/-0lTFGE9GDoA/T2YJkJtJOUI/AAAAAAAAAg0/VDekTHbbFhI/s1600/tumblr_lkj5bxH6ZB1qcqavbo1_400.gif",
+        "title": "Qual dessa é uma evolução do Slowpoke?",
         "description": "Faz tempo em haha",
         "answer": 0,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+           "Slowbro",
+           "Ivysaur",
+           "Licktang",
+           "Bellsprout"
+        ]
+      },
+      {
+        "image": "https://img.ibxk.com.br/2017/05/22/22114523204062.gif",
+        "title": "Quais os pokémons lendários da 1ª geração?",
+        "description": "Cuidado com a casca de banana",
+        "answer": 1,
+        "alternatives": [
+           "Entei, Suicune e Raikou",
+           "Articuno, Zapdos e Moltres",
+           "Latias e Latios",
+           "Regirock, Regice, Registeel e Regigigas"
+        ]
+      },
+      {
+        "image": "https://i.pinimg.com/originals/aa/5f/c5/aa5fc59737394c4d39fd9503f6069e35.gif",
+        "title": "Qual o nome da equipe que sempre tenta roubar pokémons?",
+        "description": "Essa é fácil...",
+        "answer": 2,
+        "alternatives": [
+           "Equipe Pokémon",
+           "Equipe do barulho",
+           "Equipe Rocket",
+           "Equipe do Meowth"
+        ]
+      },
+      {
+        "image": "https://i.gifer.com/J0Xv.gif",
+        "title": "Qual o nome do professor que ajudou o Ash a capturar o seu primeiro pokémon?",
+        "description": "Essa é boa :)",
+        "answer": 0,
+        "alternatives": [
+           "Professor Carvalho",
+           "Professor Manoel",
+           "Professor Cavalcante",
+           "Professor Bezerra"
+        ]
+      },
+      {
+        "image": "https://i.pinimg.com/originals/c0/26/5f/c0265f26aad6d92a2a4f5f38b9d94ddc.gif",
+        "title": "Qual o principal ataque do Pikachu?",
+        "description": "Uma dica? Esse da animação",
+        "answer": 1,
+        "alternatives": [
+           "Ataque rápido",
+           "Choque do trovão",
+           "Esfera elétrica",
+           "Cauda de ferro"
+        ]
+      },
+      {
+        "image": "https://i.gifer.com/Ymcx.gif",
+        "title": "Qual o nome da evolução do Magikarp?",
+        "description": "Essa é difícil =]",
+        "answer": 0,
+        "alternatives": [
+           "Gyarados",
+           "Dratini",
+           "Goldeen",
+           "Charizard"
         ]
       }
     ],
@@ -42,4 +140,5 @@
       },
       "borderRadius": "4px"
     }
+    
   }

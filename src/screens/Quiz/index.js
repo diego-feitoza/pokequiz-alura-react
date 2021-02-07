@@ -8,7 +8,7 @@ import Widget from '../../components/Widget';
 import QuizContainer from '../../components/QuizContainer';
 import AlternativesForm from '../../components/AlternativesForm';
 import QuizBackground from '../../components/QuizBackground';
-import QuizLogo from '../../components/QuizLogo';
+import {QuizLogoAlura} from '../../components/QuizLogo';
 import GitHubCorner from '../../components/GitHubCorner';
 import Button from '../../components/Button';
 import BackLinkArrow from '../../components/BackLinkArrow';
@@ -202,7 +202,7 @@ export default function QuizPage({ externalQuestions, externalBg }) {
     return(
         <QuizBackground backgroundImage={bg}>
       <QuizContainer>
-        <QuizLogo />
+        <QuizLogoAlura />
         {screenState === screenStates.QUIZ && (
           <QuesionWidget
             question={question}

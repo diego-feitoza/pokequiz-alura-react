@@ -8,7 +8,7 @@ import Widget from '../../src/components/Widget';
 import QuizContainer from '../../src/components/QuizContainer';
 import AlternativesForm from '../../src/components/AlternativesForm';
 import QuizBackground from '../../src/components/QuizBackground';
-import QuizLogo from '../../src/components/QuizLogo';
+import {QuizLogoPoke} from '../../src/components/QuizLogo';
 import GitHubCorner from '../../src/components/GitHubCorner';
 import Button from '../../src/components/Button';
 import BackLinkArrow from '../../src/components/BackLinkArrow';
@@ -201,7 +201,7 @@ export default function QuizPage() {
     return(
         <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
-        <QuizLogo />
+        <QuizLogoPoke />
         {screenState === screenStates.QUIZ && (
           <QuesionWidget
             question={question}

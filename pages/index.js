@@ -7,7 +7,7 @@ import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizContainer from '../src/components/QuizContainer';
 import QuizBackground from '../src/components/QuizBackground';
-import QuizLogo from '../src/components/QuizLogo';
+import {QuizLogoPoke} from '../src/components/QuizLogo';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import Input from '../src/components/Input';
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
-        <QuizLogo />
+        <QuizLogoPoke />
         <Widget
           as={motion.section}
           transition={{ delay: 0.3, duration: 0.5 }}
